@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dasdo Purba – Project Manager, Data & Analytics</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#F5F6F8; --surface:#FFFFFF; --ink:#1A2330; --muted:#566274; --line:#D9DEE5;
+  --bronze:#9A5F2E; --bronze-bg:#F3E7DB;
+  --silver:#6B7686; --silver-bg:#E6EAEF;
+  --gold:#A88312; --gold-bg:#F6EDC8;
+  --head:'Bricolage Grotesque',system-ui,sans-serif;
+  --body:'Newsreader',Georgia,serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#141A23; --surface:#1C2430; --ink:#E8ECF1; --muted:#9AA6B6; --line:#2E3847;
+    --bronze:#D79A64; --bronze-bg:#2B2119;
+    --silver:#AEB8C6; --silver-bg:#222B37;
+    --gold:#E0BC3E; --gold-bg:#2D2813;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#141A23; --surface:#1C2430; --ink:#E8ECF1; --muted:#9AA6B6; --line:#2E3847;
+  --bronze:#D79A64; --bronze-bg:#2B2119; --silver:#AEB8C6; --silver-bg:#222B37; --gold:#E0BC3E; --gold-bg:#2D2813;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.125rem;line-height:1.6}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--head);margin:0;line-height:1.1;letter-spacing:-.02em}
+p{margin:0 0 1em;max-width:66ch}
+
+/* hero */
+.hero{padding:72px 0 0}
+.hero h1{font-size:clamp(2.6rem,8vw,5.6rem);font-weight:700}
+.hero .role{font-family:var(--head);font-size:clamp(1.15rem,2.4vw,1.5rem);color:var(--muted);margin:14px 0 22px}
+.hero .lede{font-size:1.25rem;max-width:58ch}
+.contact{display:flex;flex-wrap:wrap;gap:10px 22px;margin:22px 0 0;padding:0;list-style:none;font-family:var(--head);font-size:1rem}
+
+/* layered career: the memorable element */
+.layers{margin:56px 0 0;display:grid;gap:0}
+.layer{position:relative;padding:28px 28px 30px;border-left:10px solid var(--c);background:var(--cbg);
+  animation:settle .7s cubic-bezier(.2,.7,.2,1) both}
+.layer:nth-child(2){animation-delay:.12s;margin-left:clamp(0px,4vw,48px)}
+.layer:nth-child(3){animation-delay:.24s;margin-left:clamp(0px,8vw,96px)}
+@keyframes settle{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.layer{animation:none}html{scroll-behavior:auto}}
+.layer.bronze{--c:var(--bronze);--cbg:var(--bronze-bg)}
+.layer.silver{--c:var(--silver);--cbg:var(--silver-bg)}
+.layer.gold{--c:var(--gold);--cbg:var(--gold-bg)}
+.layer .when{font-family:var(--head);font-weight:500;color:var(--c);font-size:1rem}
+.layer h2{font-size:clamp(1.5rem,3.6vw,2.1rem);margin:4px 0 8px}
+.layer p{margin:0 0 .6em;color:var(--ink)}
+.layer ul{margin:8px 0 0;padding-left:1.1em;color:var(--muted);font-size:1.02rem}
+.layer li{margin:2px 0}
+
+section{padding:76px 0 0}
+.sec-title{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:28px}
+
+/* case studies */
+.cases{display:grid;gap:22px}
+.case{background:var(--surface);border:1px solid var(--line);border-top:6px solid var(--c);padding:26px 28px 22px}
+.case.bronze{--c:var(--bronze)} .case.silver{--c:var(--silver)} .case.gold{--c:var(--gold)}
+.case h3{font-size:1.55rem}
+.case .meta{font-family:var(--head);color:var(--muted);font-size:.98rem;margin:6px 0 16px}
+.facts{display:flex;flex-wrap:wrap;gap:8px 26px;margin:0 0 16px;padding:0;list-style:none;font-family:var(--head)}
+.facts b{font-size:1.6rem;margin-right:6px}
+.facts span{color:var(--muted);font-size:.95rem}
+.case ul{margin:0;padding-left:1.1em}
+.case li{margin:5px 0}
+.case .stack{margin:16px 0 0;color:var(--muted);font-size:.98rem}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0;border:1px solid var(--line);background:var(--surface)}
+.skills div{padding:20px 22px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);margin:-1px 0 0 -1px}
+.skills h3{font-size:1.1rem;margin-bottom:6px}
+.skills p{margin:0;color:var(--muted);font-size:1.02rem}
+
+/* recognition */
+.rec{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.rec div{border-left:4px solid var(--gold);padding:2px 0 2px 18px}
+.rec h3{font-size:1.15rem;margin-bottom:4px}
+.rec p{margin:0;color:var(--muted);font-size:1.02rem}
+
+footer{margin-top:84px;padding:34px 0 48px;border-top:1px solid var(--line);font-family:var(--head)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:baseline}
+footer .big{font-size:1.5rem;font-weight:700}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Dasdo Christian Jonathan Purba</h1>
+    <p class="role">Project Manager, Data & Analytics &nbsp;|&nbsp; Jakarta</p>
+    <p class="lede">I started as a data engineer, grew into a Tech Lead, and now run projects as a Project Manager. Seven years at Astra Graphia Information Technology, across enterprise work for Telkom, Telin, LinkAja, Isuzu Astra Motor Indonesia, and Astra Infra. Because I have built the pipelines myself, my mandays, budget, and timeline estimates reflect real delivery conditions.</p>
+    <ul class="contact">
+      <li><a href="mailto:dasdopurba18@gmail.com">dasdopurba18@gmail.com</a></li>
+      <li><a href="https://linkedin.com/in/dasdo-purba-1a8066130">linkedin.com/in/dasdo-purba-1a8066130</a></li>
+    </ul>
+
+    <div class="layers" aria-label="Career path, from raw foundation to curated delivery">
+      <div class="layer bronze">
+        <div class="when">Sep 2019 – 2024</div>
+        <h2>Data Engineer</h2>
+        <p>Built the raw foundation: SQL, ETL, data marts, data cubes, and the data quality checks behind corporate reporting.</p>
+        <ul><li>Data Lake & Corporate Dashboard, Telin</li><li>Merchant Onboarding Management System, LinkAja</li><li>digiNeta technical support, Telkom Indonesia</li></ul>
+      </div>
+      <div class="layer silver">
+        <div class="when">2025 – Jul 2026</div>
+        <h2>Tech Lead (Data)</h2>
+        <p>Led data teams, estimated mandays, scoped projects, and designed the medallion architecture that turns raw data into analysis-ready tables.</p>
+        <ul><li>Data Lakehouse Migration, Isuzu Astra Motor Indonesia</li><li>KPI Dashboard, Telin</li></ul>
+      </div>
+      <div class="layer gold">
+        <div class="when">Jul 2026 – Present</div>
+        <h2>Project Manager</h2>
+        <p>Completed a 3-month probation as Co-Project Manager, delivered on time and on budget, and was confirmed as Project Manager in Oct 2026.</p>
+        <ul><li>Dashboard Maintenance Tol Cipali, Astra Infra</li></ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section>
+  <div class="wrap">
+    <h2 class="sec-title">Selected projects</h2>
+    <div class="cases">
+
+      <article class="case gold">
+        <h3>Dashboard Maintenance Tol Cipali</h3>
+        <p class="meta">PT Astra Infra &nbsp;|&nbsp; Co-Project Manager &nbsp;|&nbsp; Jul 2026 – Oct 2026</p>
+        <ul class="facts">
+          <li><b>138</b><span>mandays, on time and on budget</span></li>
+          <li><b>5</b><span>person team: 1 PM, 1 Co-PM, 2 visualization, 1 data</span></li>
+        </ul>
+        <ul>
+          <li>Led day-to-day planning and execution: work plan, timeline, scope alignment, resource planning, and task allocation.</li>
+          <li>Led client and stakeholder coordination, managed expectations and change requests, and turned business requirements into technical deliverables.</li>
+          <li>Tracked progress and milestones, ran project meetings and follow-ups, and decided operational actions for issues and delivery risks.</li>
+          <li>Coordinated deliverable quality, SIT/UAT, defect resolution, status reporting, closure, and handover.</li>
+          <li>Monitored effort and budget use, coordinated escalations, and handled decisions and approvals with the supervising Project Manager.</li>
+        </ul>
+      </article>
+
+      <article class="case silver">
+        <h3>KPI Dashboard</h3>
+        <p class="meta">PT Telekomunikasi Internasional (Telin) &nbsp;|&nbsp; Tech Lead (Data) &nbsp;|&nbsp; Jan 2026 – Jul 2026</p>
+        <ul class="facts">
+          <li><b>24</b><span>dashboard pages, live Jul 2026</span></li>
+          <li><b>4</b><span>person data team</span></li>
+        </ul>
+        <ul>
+          <li>Consolidated data from APIs and manually maintained Excel files in MinIO, collected through MyZ, a data collection platform built by AGIT, the company I work for.</li>
+          <li>Designed the medallion architecture (bronze, silver, gold) that feeds curated data to the Power BI team.</li>
+          <li>Defined expectations and business insights with the client, and balanced the team’s workload to avoid overtime and budget overrun.</li>
+          <li>Coordinated FSD, TSD, SIT, UAT, and user manual, and worked with the Project Manager on scoping.</li>
+        </ul>
+        <p class="stack">Medallion architecture, MinIO, MyZ, Power BI</p>
+      </article>
+
+      <article class="case silver">
+        <h3>Data Lakehouse Migration</h3>
+        <p class="meta">PT Isuzu Astra Motor Indonesia &nbsp;|&nbsp; Technical Lead Assistant (Data) &nbsp;|&nbsp; Jun 2025 – Dec 2025</p>
+        <ul>
+          <li>Supported the technical lead on a migration from a data warehouse approach to a lakehouse architecture.</li>
+          <li>Worked on task allocation, technical review, and coordination across the data team.</li>
+        </ul>
+        <p class="stack">Lakehouse, Microsoft Fabric, medallion architecture</p>
+      </article>
+
+      <article class="case bronze">
+        <h3>Data Lake & Corporate Dashboard</h3>
+        <p class="meta">PT Telekomunikasi Internasional (Telin) &nbsp;|&nbsp; Data Engineer &nbsp;|&nbsp; Feb 2022 – Oct 2024</p>
+        <ul>
+          <li>Designed and built end-to-end pipelines, data marts, and data cubes for corporate reporting.</li>
+          <li>Built SQL job schedulers (SSMS) and ETL integrations, including Java application to Google BigQuery and Excel/CSV to BigQuery.</li>
+          <li>Ran data quality validation and root cause analysis on incomplete or inconsistent data.</li>
+          <li>The Telin Project & Deployment Manager thanked the AGIT team for the successful go-live.</li>
+        </ul>
+        <p class="stack">SQL Server, SSIS, BigQuery, MongoDB, Agile</p>
+      </article>
+
+      <article class="case bronze">
+        <h3>Annual & Professional Technical Support CDC digiNeta</h3>
+        <p class="meta">PT Telekomunikasi Indonesia &nbsp;|&nbsp; Data Engineer, then Support Team Leader &nbsp;|&nbsp; Sep 2019 – Present</p>
+        <ul>
+          <li>Supported the digiNeta application from the data side: troubleshooting, bug root cause analysis, and data validation.</li>
+          <li>Support Team Leader since 2022, alongside other projects.</li>
+          <li>Telkom Indonesia recognized the team after the application held the best Customer Satisfaction Index for three consecutive years.</li>
+        </ul>
+      </article>
+
+      <article class="case bronze">
+        <h3>Merchant Onboarding Management System</h3>
+        <p class="meta">PT Fintek Karya Nusantara (LinkAja) &nbsp;|&nbsp; ETL Developer / Data Engineer &nbsp;|&nbsp; Jan 2020 – Jan 2021</p>
+        <ul>
+          <li>Developed ETL and data transformation to support merchant onboarding.</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="sec-title">What I bring to a project</h2>
+    <div class="skills">
+      <div><h3>Project delivery</h3><p>Scoping, mandays estimation, timeline and budget control, change requests, escalations, closure and handover.</p></div>
+      <div><h3>Documentation</h3><p>FSD, TSD, SIT, UAT, and user manuals, produced and reviewed with the team.</p></div>
+      <div><h3>People and stakeholders</h3><p>Team leadership, mentoring, workload planning, and liaison between business users, operations, and developers.</p></div>
+      <div><h3>Data architecture</h3><p>Medallion (bronze, silver, gold), data warehouse vs lakehouse, star and snowflake schema, DFD and ERD. Hands-on with MyZ, AGIT’s own data collection platform.</p></div>
+      <div><h3>Engineering</h3><p>SQL, Python, SQL Server, PostgreSQL, MySQL, MongoDB, SSIS, Microsoft Fabric (Data Factory), Apache Airflow, Git.</p></div>
+      <div><h3>Cloud and BI</h3><p>Google BigQuery, Microsoft Fabric, MinIO, Power BI, Apache Zeppelin.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="sec-title">Recognition and education</h2>
+    <div class="rec">
+      <div><h3>Letter of Appreciation, Telkom Indonesia</h3><p>2 Jan 2023. For digiNeta support, with the application holding the best Customer Satisfaction Index three years in a row.</p></div>
+      <div><h3>Client appreciation, Telin</h3><p>From the Project & Deployment Manager, for the go-live of the Data Lake Architecture and Corporate Dashboard.</p></div>
+      <div><h3>Data Engineer certificate, Digital Skola</h3><p>3-month intensive program, completed 18 Jul 2022.</p></div>
+      <div><h3>Universitas Telkom, Bandung</h3><p>Bachelor of Informatics (2016 – 2019) and Associate Degree of Informatics Management (2013 – 2016). Chairman of the Student Representative Council (DPM).</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="big">Let’s talk about your next project.</span>
+    <span><a href="mailto:dasdopurba18@gmail.com">dasdopurba18@gmail.com</a> &nbsp;|&nbsp; <a href="https://linkedin.com/in/dasdo-purba-1a8066130">LinkedIn</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
